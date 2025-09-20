@@ -1,0 +1,5 @@
+{
+  "name": "Gemini Insight Engine",
+  "description": "An advanced search engine that takes complex queries and returns a synthesized, multi-modal response including text summaries, generated diagrams, key figures, and an interactive knowledge graph.",
+  "requestFramePermissions": []
+}
