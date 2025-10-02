@@ -4,6 +4,7 @@ import { SearchBar } from './components/SearchBar';
 import { LoadingState } from './components/LoadingState';
 import { ResultsDisplay } from './components/ResultsDisplay';
 import { ErrorDisplay } from './components/ErrorDisplay';
+import { WelcomeScreen } from './components/WelcomeScreen';
 import { fetchSynthesizedResponse } from './services/geminiService';
 import type { SynthesizedResponse } from './types';
 import { GeminiLogo } from './components/Icons';
@@ -31,8 +32,21 @@ const App: React.FC = () => {
     }
   }, []);
 
+  const renderContent = () => {
+    if (isLoading) {
+      return <LoadingState />;
+    }
+    if (error) {
+      return <ErrorDisplay message={error} />;
+    }
+    if (results) {
+      return <ResultsDisplay data={results} />;
+    }
+    return <WelcomeScreen onSearch={handleSearch} />;
+  };
+
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-200 font-sans">
+    <div className="min-h-screen text-gray-200 font-sans">
       <main className="container mx-auto px-4 py-8 md:py-12">
         <header className="text-center mb-8 md:mb-12">
           <div className="flex items-center justify-center gap-4 mb-4">
@@ -51,9 +65,7 @@ const App: React.FC = () => {
         </div>
 
         <div className="mt-12">
-          {isLoading && <LoadingState />}
-          {error && <ErrorDisplay message={error} />}
-          {results && <ResultsDisplay data={results} />}
+          {renderContent()}
         </div>
       </main>
       <footer className="text-center py-6 text-gray-500 text-sm">

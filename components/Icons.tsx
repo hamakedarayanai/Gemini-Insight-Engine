@@ -43,6 +43,18 @@ export const LinkIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     </svg>
 );
 
+export const ZapIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} {...props}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+    </svg>
+);
+
+export const ExternalLinkIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} {...props}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M12.75 12.75l-6-6m6 6l6-6m-6 6v6.75a2.25 2.25 0 01-2.25 2.25H6.75a2.25 2.25 0 01-2.25-2.25V6.75a2.25 2.25 0 012.25-2.25h6.75a2.25 2.25 0 012.25 2.25v6.75" />
+  </svg>
+);
+
 export const GeminiLogo: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
         <path d="M20 10.28C19.44 11.39 18.66 12.33 17.72 13.04C14.03 15.8 9.09001 15.44 5.81001 12.16C-0.0399902 6.31 0.44001 0 0.44001 0H14.59C14.59 0 15.01 4.5 20 10.28Z" fill="url(#paint0_linear_1_125)"/>

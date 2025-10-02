@@ -17,8 +17,43 @@
   }
 }
 </script>
+<style>
+      @keyframes gradient-animation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      body {
+        background: linear-gradient(-45deg, #020617, #111827, #1e1b4b, #3730a3);
+        background-size: 400% 400%;
+        animation: gradient-animation 25s ease infinite;
+      }
+      @keyframes shimmer {
+        0% { background-position: -1000px 0; }
+        100% { background-position: 1000px 0; }
+      }
+      .animate-shimmer {
+        background: linear-gradient(to right, #1f2937 8%, #374151 18%, #1f2937 33%);
+        background-size: 2000px 100%;
+        animation: shimmer 2s infinite linear;
+      }
+      @keyframes fade-in-up {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in-up {
+        animation: fade-in-up 0.5s ease-out forwards;
+        opacity: 0; /* Start hidden */
+      }
+    </style>
 </head>
-  <body class="bg-gray-900">
+  <body>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>
